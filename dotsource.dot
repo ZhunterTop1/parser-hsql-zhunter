@@ -1,0 +1,12 @@
+digraph G {
+	node [shape=record]
+	struct0 [label="{{{{<f#cnt#5> cnt#5}|{<fe#cnt#5> sum(cast(cnt#0 as bigint)) AS cnt#5L}}}|{<f0> tableName: null}|{<cnt#0> cnt#0}}"]
+	struct4 [label="{{{{<f#ppp#2> ppp#2}|{<fe#ppp#2> 2 AS ppp#2}}}|{<f0> tableName: OneRowRelation}|{}}"]
+	struct3 [label="{{{{<f#cnt#0> cnt#0}|{<fe#cnt#0> 1 AS cnt#0}}}|{<f0> tableName: OneRowRelation}|{}}"]
+	struct2 [label="{{{{<f#cnt#0> cnt#0}|{<fe#cnt#0> 1 AS cnt#0 UNION 2 AS ppp#2}}}|{<f0> tableName: SubqueryAlias.a}|{<cnt#0> cnt#0|<ppp#2> ppp#2}}"]
+	struct1 [label="{{{{<f#cnt#0> cnt#0}|{<fe#cnt#0> 1 AS cnt#0 UNION 2 AS ppp#2}}}|{<f0> tableName: join}|{<cnt#0> cnt#0}}"]
+	struct2:"cnt#0" -> struct3:"f#cnt#0"
+	struct2:"ppp#2" -> struct4:"f#ppp#2"
+	struct1:"cnt#0" -> struct2:"f#cnt#0"
+	struct0:"cnt#0" -> struct1:"f#cnt#0"
+}
